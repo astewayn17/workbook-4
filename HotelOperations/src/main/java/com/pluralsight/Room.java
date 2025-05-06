@@ -22,4 +22,16 @@ public class Room {
     public double getPrice() { return price; }
     public boolean isOccupied() { return isOccupied; }
     public boolean isDirty() { return isDirty; }
+
+    public void checkIn() {
+        isOccupied = true;
+        isDirty = true;
+    }
+    public void checkOut() {
+        isOccupied = false;
+        isDirty = true;
+    }
+    public void cleanRoom() {
+        isDirty = false;
+    }
 }
