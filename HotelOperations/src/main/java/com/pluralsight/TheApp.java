@@ -63,11 +63,11 @@ public class TheApp {
         System.out.println("Punched in!");
         System.out.println("Waiting a minute...");
         // Waiting a minute to record a short work shift to test
-//        try {
-//            Thread.sleep(60000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(60000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Employee punching out
         yaBoi.punchOut();
         System.out.println("Punched out!");
@@ -98,7 +98,7 @@ public class TheApp {
         System.out.println("Booking 12 more suites: " + bookingSuites2);
         // Shows the availability after booking
         System.out.println("What suites are now available? " + daTelly.getAvailableSuites());
-        System.out.println("What basic rooms are now available? " + daTelly.getAvailableBasicRooms());
+        System.out.println("What basic rooms are now available? " + daTelly.getAvailableRooms());
         System.out.println("How many suites are booked? " + daTelly.getBookedSuites());
         System.out.println("How many basic rooms are booked? " + daTelly.getBookedBasicRooms());
     }

@@ -29,24 +29,23 @@ public class Hotel {
 
     // Method to allow the use to book a room based on if it's a suite or not, if there are rooms available or not and
     // adds the requested rooms to the booked total
-    public boolean bookRoom(int numberOfRoomsRequested, boolean isSuite) {
+    public boolean bookRoom(int numberOfRooms, boolean isSuite) {
         if (isSuite) {
-            if (getAvailableSuites() >= numberOfRoomsRequested) {
-                bookedSuites += numberOfRoomsRequested;
+            if (getAvailableSuites() >= numberOfRooms) {
+                bookedSuites += numberOfRooms;
                 return true;
             }
         } else {
-            if (getAvailableBasicRooms() >= numberOfRoomsRequested) {
-                bookedBasicRooms += numberOfRoomsRequested;
+            if (getAvailableRooms() >= numberOfRooms) {
+                bookedBasicRooms += numberOfRooms;
                 return true;
             }
-        }
-        return false;
+        } return false;
     }
 
     // Derived getters for available rooms and suites based on subtracting the total number by the amount booked
     public int getAvailableSuites() { return numberOfSuites - bookedSuites; }
-    public int getAvailableBasicRooms() { return numberOfRooms - bookedBasicRooms; }
+    public int getAvailableRooms() { return numberOfRooms - bookedBasicRooms; }
 
     // Standard getters for the declared private variables
     public String getName() { return name; }
