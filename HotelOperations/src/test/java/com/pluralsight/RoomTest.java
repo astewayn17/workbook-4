@@ -14,26 +14,26 @@ class RoomTest {
         r1.checkIn();
         // Assert
         assertTrue(r1.isOccupied() && r1.isDirty());
-        assertFalse(r1.isAvailable());
+        assertFalse(r1.isAvailable()); // Better to have one assert/test next time
     }
     @Test
     public void checkOut_should_beUnoccupiedAndDirty() {
         // Arrange
-        Room r1 = new Room (2, 145.99, false, false);
+        Room r1 = new Room (2, 145.99, true, true);
         // Act
         r1.checkOut();
         // Assert
-        assertTrue(r1.isDirty());
+        assertTrue(r1.isDirty()); // Better to have one assert/test next time
         assertFalse(r1.isAvailable() && r1.isOccupied());
     }
     @Test
     public void cleanRoom_should_makeARoomAvailable() {
         // Arrange
-        Room r1 = new Room (2, 145.99, false, false);
+        Room r1 = new Room (2, 145.99, false, true);
         // Act
         r1.cleanRoom();
         // Assert
         assertTrue(r1.isAvailable());
-        assertFalse(r1.isOccupied() && r1.isDirty());
+        assertFalse(r1.isDirty()); // Better to have one assert/test next time
     }
 }
