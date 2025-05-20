@@ -4,7 +4,7 @@ import java.util.Random;
 
 // Create a class using the extends keyword to copy functionality
 // from the parent class (super class) to the child class (subclass)
-public class SuperHero extends SuperPerson{
+public class SuperHero extends SuperPerson implements Fightable {
 
     // Constructor that calls the parent class constructor
     public SuperHero(String name, int health, int powerLevel) {
@@ -33,7 +33,7 @@ public class SuperHero extends SuperPerson{
             // They take that random damage + the power level (exp pts of the hero)
             enemy.takeDamage(damage);
             System.out.println("I the Chosen One " + this.name + " kicked " + enemy.name + "'s butt with "
-                    + (damage) + " damage points!");
+                    + damage + " damage points!");
         }
         //
         logHit(enemy);

@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import java.util.Random;
 
-public class SuperVillain extends SuperPerson {
+public class SuperVillain extends SuperPerson implements Fightable {
 
     public SuperVillain(String name, int health, int darknessLevel) {
         super(name, health);
@@ -21,7 +21,7 @@ public class SuperVillain extends SuperPerson {
         } else {
             enemy.takeDamage(damage);
             System.out.println("I the dark lord, " + this.name + " kicked " + enemy.name + "'s butt with "
-                    + (damage) + " damage points!");
+                    + damage + " damage points!");
         }
         logHit(enemy);
     }
